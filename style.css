@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+::backdrop {
+    background-color: black;
+    opacity: 0.5;
+    
+}
+
 button {
     height: 30px;
     width: 90px;
@@ -23,13 +29,24 @@ button:active {
     transition: 0.05s ease-out;
 }
 
-table, th {
-    border: 1px solid;
+input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+td {
+    text-align: center;
+}
+
+tr, td, th {
+    border: 1px solid black;
+    padding: 20px;
 }
 
 table {
+    line-height: 25px;
     width: 100%;
     margin-top: 2rem;
+    border-collapse: collapse;
 }
 
 .maincontent {

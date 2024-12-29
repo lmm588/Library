@@ -11,16 +11,35 @@
 <body>
     <div class="maincontent">
         <button>Add Book</button>
-        <table>
-            <header>
+        <table id="book-table">
+            <thead>
                 <tr>
                     <th class="tableheader">Title</th>
                     <th class="tableheader">Author</th>
                     <th class="tableheader">Page Count</th>
                     <th class="tableheader">Read?</th>
                 </tr>
-            </header>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
         </table>
+        <dialog>
+            <button autofocus>Close</button>
+            <p>Book details:</p>
+            <form>
+                <fieldset>
+                    <label for="title">Title
+                    <input id="title" placeholder="Title" required>
+                    <label for="author">Author
+                    <input id="author" placeholder="Author" required>
+                    <label for="pages">Page Count
+                    <input id="pages" placeholder="Page Count" required>
+                    <label for="is-read">Is read?
+                    <input id="is-read" type="checkbox">
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
+          </dialog>
     </div>
     <script src="script.js"></script>
 </body>
