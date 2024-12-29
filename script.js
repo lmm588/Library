@@ -1,3 +1,5 @@
+const myLibrary = [];
+
 function Book(title, author, pages, isRead) {
     this.title = title;
     this.author = author;
@@ -5,10 +7,20 @@ function Book(title, author, pages, isRead) {
     this.isRead = isRead;
 }
 
-Book.prototype.info = function() {
-    return `Book: ${this.title} Author: ${this.author} Page Count: ${this.pages} Read?: ${this.isRead}`;
+function addBookToLibrary(title, author, pages, isRead) {
+    let book = new Book(title, author, pages, isRead);
+    myLibrary.push(book);
 }
 
-let book = new Book("Harry Potter", "Jk Rowling", "545", "true");
-console.log(book.info());
+function listBooks(books) {
+    for (book of books) {
+        console.log(book);
+    }
+}
+
+
+addBookToLibrary("Testbook", "Some author", 231, true);
+addBookToLibrary("Testbook2", "Some author2", 331, false);
+addBookToLibrary("Testbook3", "Some author3", 3321, false);
+listBooks(myLibrary);
 
