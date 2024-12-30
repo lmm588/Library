@@ -11,7 +11,6 @@
 <body>
     <div class="maincontent">
         <h1>Library</h1>
-        <button title="Add book">Add book</button>
         <table id="book-table">
             <thead>
                 <tr>
@@ -30,20 +29,21 @@
             <form>
                 <fieldset>
                     <label for="title">Title*
-                    <input id="title" placeholder="Title" name="title" type="text" required>
-                    <label for="author">Author*
-                    <input id="author" placeholder="Author" name="author" type="text" required>
-                    <label for="pages">Page Count
-                    <input id="pages" placeholder="Page Count" name="pages" type="number" max="9999">
-                    <label for="is-read">Is read?
-                    <input id="is-read" name="is-read" type="checkbox">
+                        <input id="title" placeholder="Title" name="title" type="text" required>
+                        <label for="author">Author*
+                        <input id="author" placeholder="Author" name="author" type="text" required>
+                        <label for="pages">Page Count
+                        <input id="pages" placeholder="Page Count" name="pages" type="number" max="9999">
+                        <label for="is-read">Is read?
+                        <input id="is-read" name="is-read" type="checkbox">
                 </fieldset>
                 <div class="buttons-wrapper">
                     <button type="button">Close</button>
                     <button type="submit">Submit</button>
                 </div>
             </form>
-          </dialog>
+        </dialog>
+        <button title="Add book">Add book</button>
     </div>
     <script src="script.js"></script>
 </body>

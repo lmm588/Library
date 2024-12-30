@@ -7,17 +7,20 @@
 ::backdrop {
     background-color: black;
     opacity: 0.5;
-    
+
 }
 
 button {
     height: 30px;
     width: 90px;
     border: none;
-    background-color: greenyellow;
+    background-color: teal;
     color: white;
-    align-self: flex-end;
-    margin: 10px;
+    align-self: center;
+}
+
+button[title="Add book"] {
+    margin-top: 20px;
 }
 
 button:hover {
@@ -35,7 +38,12 @@ button:active {
     justify-content: flex-end;
 }
 
-input[type="text"], input[type="number"] {
+.buttons-wrapper>button {
+    margin-left: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -59,9 +67,11 @@ td {
     text-align: center;
 }
 
-tr, td, th {
+tr,
+td,
+th {
     border: 1px solid black;
-    padding: 20px;
+    padding: 10px;
 }
 
 th {
@@ -69,8 +79,8 @@ th {
 }
 
 table {
-    line-height: 25px;
-    width: 100%;
+    line-height: 10px;
+    width: 75%;
     margin-top: 2rem;
     border-collapse: collapse;
 }
@@ -93,7 +103,7 @@ dialog {
     overflow: auto;
 }
 
-dialog > p {
+dialog>p {
     font-size: 1.5rem;
     font-weight: bold;
 }
