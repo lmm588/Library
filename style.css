@@ -14,9 +14,10 @@ button {
     height: 30px;
     width: 90px;
     border: none;
-    background-color: aqua;
+    background-color: greenyellow;
     color: white;
     align-self: flex-end;
+    margin: 10px;
 }
 
 button:hover {
@@ -27,6 +28,27 @@ button:hover {
 button:active {
     transform: scale(0.98);
     transition: 0.05s ease-out;
+}
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    top: 2px;
+    width: 20px;
 }
 
 input[type="checkbox"]:hover {
@@ -40,6 +62,10 @@ td {
 tr, td, th {
     border: 1px solid black;
     padding: 20px;
+}
+
+th {
+    font-size: 1.2rem;
 }
 
 table {
@@ -56,4 +82,24 @@ table {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+dialog {
+    align-self: center;
+    justify-self: center;
+    padding: 50px;
+    border: 2px solid black;
+    border-radius: 20px;
+    overflow: auto;
+}
+
+dialog > p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+fieldset {
+    border: none;
+    margin-top: 20px;
+    line-height: 35px;
 }

@@ -2,7 +2,7 @@ const myLibrary = [];
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("button");
 const closeButton = document.querySelector("dialog button");
-const newBookForm = document.querySelector("dialog > form");
+const BookForm = document.querySelector("dialog > form");
 
 showButton.addEventListener("click", (e) => {
     dialog.showModal();
@@ -10,9 +10,10 @@ showButton.addEventListener("click", (e) => {
 
 closeButton.addEventListener("click", (e) => {
     dialog.close();
+    BookForm.reset();
 });
 
-newBookForm.addEventListener("submit", e => {
+BookForm.addEventListener("submit", e => {
     e.preventDefault();
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
@@ -20,7 +21,7 @@ newBookForm.addEventListener("submit", e => {
     const isRead = document.getElementById("is-read").checked;
     let book = addBookToLibrary(title, author, pages, isRead);
     appendBook(book);
-    newBookForm.reset();
+    BookForm.reset();
     dialog.close();
 });
 
@@ -30,6 +31,12 @@ function Book(title, author, pages, isRead) {
     this.pages = pages;
     this.isRead = isRead;
 }
+
+Book.prototype.deleteRow = function (button) {
+    let row = button.parentNode.parentNode;
+    let table = document.getElementById("book-table");
+    table.deleteRow(row.rowIndex);
+};
 
 function addBookToLibrary(title, author, pages, isRead) {
     let book = new Book(title, author, pages, isRead);
@@ -48,7 +55,14 @@ function appendBook(book) {
     isReadCheckbox.type = "checkbox";
     isReadCheckbox.checked = book.isRead;
     checkboxRow.appendChild(isReadCheckbox);
-}
+    let deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-button");
+    deleteButton.setAttribute("onclick", "book.deleteRow(this)");
+    deleteButton.innerHTML = "Delete book";
+    let deleteRow = newRow.insertCell(4);
+    deleteRow.appendChild(deleteButton);
+};
+
 
 function displayLibrary(books) {
     for (book of books) {
@@ -56,8 +70,10 @@ function displayLibrary(books) {
     }
 }
 
-addBookToLibrary("Testbook", "Some author", 231, true); //use array here!
-addBookToLibrary("Testbook2", "Some author2", 331, false);
-addBookToLibrary("Testbook3", "Some author3", 3321, false);
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+}
+
+addBookToLibrary("Testbook", "Some author", 231, true);
 displayLibrary(myLibrary);
 
