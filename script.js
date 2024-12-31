@@ -76,24 +76,19 @@ const bookTable = (() => { //Another IIFE
     return { cacheDom, addTableRow, buildTable, submitUserCreatedBook, deleteRow }
 })();
 
-
-const libraryTable = bookTable.cacheDom();
-
-libraryTable.showFormButton.addEventListener("click", () => {
-    libraryTable.modalDialog.showModal();
+bookTable.cacheDom();
+bookTable.showFormButton.addEventListener("click", () => {
+    bookTable.modalDialog.showModal();
 });
-
-libraryTable.closeFormButton.addEventListener("click", () => {
-    libraryTable.modalDialog.close();
-    libraryTable.bookForm.reset();
+bookTable.closeFormButton.addEventListener("click", () => {
+    bookTable.modalDialog.close();
+    bookTable.bookForm.reset();
 });
-
-libraryTable.bookForm.addEventListener("submit", (e) => {
+bookTable.bookForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    libraryTable.submitUserCreatedBook();
+    bookTable.submitUserCreatedBook();
 });
-
 const newBook = myLibrary.addBookToLibrary("A Test Book", "Some Dude", "200", "True");
-libraryTable.buildTable(myLibrary.returnBooks());
+bookTable.buildTable(myLibrary.returnBooks());
 
 
