@@ -81,6 +81,6 @@ const bookTable = (() => { //Another IIFE
     bookTable.showFormButton.addEventListener("click", () => { bookTable.modalDialog.showModal(); });
     bookTable.closeFormButton.addEventListener("click", () => { bookTable.modalDialog.close(); bookTable.bookForm.reset(); });
     bookTable.bookForm.addEventListener("submit", (e) => { e.preventDefault(); bookTable.submitUserCreatedBook(); });
-    const newBook = myLibrary.addBookToLibrary("A Test Book", "Some Dude", "200", "True"); bookTable.buildTable(myLibrary.returnBooks());
+    myLibrary.addBookToLibrary("A Test Book", "Some Dude", "200", "True"); bookTable.buildTable(myLibrary.returnBooks());
 })();
 
